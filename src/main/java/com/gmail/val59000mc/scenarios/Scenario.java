@@ -60,7 +60,8 @@ public enum Scenario{
     MONSTERSINC(UniversalMaterial.IRON_DOOR, MonstersIncListener.class),
     ACHIEVEMENTHUNTER(UniversalMaterial.BOOK, AchievementHunter.class),
     NINESLOTS(UniversalMaterial.BARRIER, NineSlotsListener.class),
-    NETHERSTART(UniversalMaterial.LAVA_BUCKET, NetherStartListener.class);
+    ONETAPPED(UniversalMaterial.IRON_SWORD, OneTappedListener.class);
+  
 
     private String name;
     private final UniversalMaterial material;

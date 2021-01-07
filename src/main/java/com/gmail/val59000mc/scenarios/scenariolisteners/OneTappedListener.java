@@ -11,18 +11,19 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.event.EventHandler;
 
-public class NetherStartListener extends ScenarioListener{
+public class OneTappedListener extends ScenarioListener{
 
     @Override
     public void onEnable(){
         if (!getConfiguration().getEnableNether()){
             Bukkit.broadcastMessage(ChatColor.RED + "[UhcCore] For NetherStart the nether needs to be enabled first!");
+            getScenarioManager().removeScenario(Scenario.ONETAPPED);
         }
     }
 
     @EventHandler
     public void onPreTeleport(UhcPreTeleportEvent e){
-        World nether = getGameManager().getMapLoader().getUhcWorld(World.Environment.THE_END);
+        World nether = getGameManager().getMapLoader().getUhcWorld(World.Environment.NETHER);
         double maxDistance = 0.9 * (nether.getWorldBorder().getSize()/2);
 
         for(UhcTeam team : getPlayersManager().listUhcTeams()){
