@@ -61,7 +61,7 @@ public enum Scenario{
     ACHIEVEMENTHUNTER(UniversalMaterial.BOOK, AchievementHunter.class),
     NINESLOTS(UniversalMaterial.BARRIER, NineSlotsListener.class),
     ONETAPPED(UniversalMaterial.IRON_SWORD, OneTappedListener.class);
-  
+
 
     private String name;
     private final UniversalMaterial material;

@@ -1,6 +1,7 @@
 package com.gmail.val59000mc.scenarios.scenariolisteners;
 
 import com.gmail.val59000mc.events.UhcPreTeleportEvent;
+import com.gmail.val59000mc.events.UhcStartedEvent;
 import com.gmail.val59000mc.game.GameManager;
 import com.gmail.val59000mc.players.UhcTeam;
 import com.gmail.val59000mc.scenarios.Scenario;
@@ -22,12 +23,11 @@ public class OneTappedListener extends ScenarioListener{
     }
 
     @EventHandler
-    public void onPreTeleport(UhcPreTeleportEvent e){
-        World nether = getGameManager().getMapLoader().getUhcWorld(World.Environment.NETHER);
-        double maxDistance = 0.9 * (nether.getWorldBorder().getSize()/2);
+    public void onPlayerSpawn(UhcStartedEvent e){
+
 
         for(UhcTeam team : getPlayersManager().listUhcTeams()){
-            Location newLoc = getPlayersManager().findRandomSafeLocation(nether, maxDistance);
+            Location newLoc = getPlayersManager().findRandomSafeLocation(, );
             team.setStartingLocation(newLoc);
         }
     }
